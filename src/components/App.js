@@ -1,13 +1,21 @@
-import React from "react";
-import blogData from "../data/blog";
-
-console.log(blogData);
+import React from 'react';
+import Header from './Header';
+import About from './About';
+import ArticleList from './ArticleList';
 
 function App() {
+  const blogName = "My Awesome Blog"; 
+  const posts = [
+    { id: 1, title: "First Post", content: "This is the content of the first post." },
+    { id: 2, title: "Second Post", content: "This is the content of the second post." },
+    { id: 3, title: "Third Post", content: "This is the content of the third post." }
+  ];
+
   return (
-    <div className="App">
-      You're on your own from here! Follow the deliverables; test things out in
-      the browser as you write your code; and good luck!
+    <div>
+      <Header name={blogName} />
+      <About />
+      <ArticleList posts={posts} /> {/* Pass posts as props to ArticleList */}
     </div>
   );
 }
